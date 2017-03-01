@@ -1,2 +1,2 @@
 # my_first_web
-A app of web for learning
+An app of web for learning

@@ -47,3 +47,12 @@ form input {
     border-color: rgb(83, 175, 19);
     font-size: 1em;
 }
+
+/* 06 设置hit和miss类，使得有这两个类的元素分别获得相应的图片和样式 */
+.hit {
+  background: url("./img/ship.png") no-repeat center center;
+}
+
+.miss {
+  background: url("./img/miss.png") no-repeat center center;
+}

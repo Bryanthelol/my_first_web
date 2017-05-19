@@ -1,0 +1,49 @@
+/* 01 背景设为全黑 */
+body {
+    background-color: black;
+}
+
+/* 02 引入背景图，定位设为相对 */
+div#board {
+    position: relative;
+    width: 1024px;
+    height: 863px;
+    margin: auto;
+    background: url("board.jpg") no-repeat;
+}
+
+/* 03 设置提示信息弹出时的位置（先设好了，用JS操作） */
+div#messageArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(83, 175, 19);
+}
+
+/* 04 把整体表格框架和每个表格覆盖到背景上 */
+table {
+    position: absolute;
+    left: 173px;
+    top: 98px;
+    border-spacing: 0;
+}
+
+td {
+    width: 94px;
+    height: 94px;
+}
+
+/* 05 把位置信息输入框放在表格框架右下角，并设置各自颜色 */
+form {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgb(83, 175, 19);
+}
+
+form input {
+    background-color: rgb(152, 207, 113);
+    border-color: rgb(83, 175, 19);
+    font-size: 1em;
+}

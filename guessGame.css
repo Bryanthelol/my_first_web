@@ -9,7 +9,7 @@ div#board {
     width: 1024px;
     height: 863px;
     margin: auto;
-    background: url("board.jpg") no-repeat;
+    background: url("my_first_webapp/img/board.jpg") no-repeat;
 }
 
 /* 03 设置提示信息弹出时的位置（先设好了，用JS操作） */

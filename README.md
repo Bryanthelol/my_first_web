@@ -1,2 +1,3 @@
-# my_first_web
-The web app for learning
+# my_first_webs
+
+一个猜位置的小游戏

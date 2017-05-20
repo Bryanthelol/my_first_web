@@ -43,12 +43,17 @@ var model = {
             var index = ship.locations.indexOf( guess );
             if ( index >= 0 ) {
                 ship.hits[ index ] = "hit";
+                view.displayHit( guess );
+                view.displayMessage( "击中一艘！" );
                 if ( this.isSunk( ship ) ) {
+                    view.displayMessage( "你击落了舰队！" );
                     this.shipsSunk++;
                 }
                 return true;
             }
         }
+        view.displayMiss( guess );
+        view.displayMessage( "遗憾，未命中……" )；
         return false;
     },
 

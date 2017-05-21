@@ -65,6 +65,24 @@ var model = {
             }
         }
         return true;
+    },
+
+    // 生成船的位置
+    generateShipLocations: function () {
+        var locations;
+        for ( var i = 0; i < this.numShips; i++ ) {
+            do {
+                locations = this.generateShip();
+            } while ( this.collosion( locations ) );
+            this.ships[ i ].locations = locations;
+        }
+    },
+
+    generateShip: function () {
+        var direction = Math.floor( Math.random() * 2 );
+        var row, col;
+
+        if ( direction === 1 ) {} else {}
     }
 };
 
@@ -83,7 +101,7 @@ var controller = {
             }
         }
     }
-}
+};
 
 // 过滤并转换用户输入的位置
 function parseGuess( guess ) {
@@ -96,7 +114,7 @@ function parseGuess( guess ) {
         var row = alphabet.indexOf( firstChar );
         var column = guess.charAt( 1 );
 
-        if ( isNaN( row ) || is NaN( column ) ) {
+        if ( isNaN( row ) || isNaN( column ) ) {
             alert( "哦豁，输入的坐标不合法！" );
         } else if ( row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize ) {
             alert( "哦豁，超出坐标范围！" );
@@ -112,7 +130,24 @@ function parseGuess( guess ) {
 
 // 作用：获得用户的输入，再传入controller层
 function handleFireButton() {
+    var guessInput = document.getElementById( "guessInput" );
+    var guess = guessInput.value;
+    controller.processGuess( guess );
 
+    // 重置输入框的位置
+    guessInput.value = "";
+}
+
+function handleKeyPress( e ) {
+    var fireButton = document.getElementById( "fireButton" );
+
+    // 为了预防IE9及以下版本不能正确传递事件对象给事件操作，加上window.event
+    e = e || window.event;
+
+    if ( e.keyCode === 13 ) {
+        fireButton.click();
+        return false;
+    }
 }
 
 
@@ -121,7 +156,11 @@ function handleFireButton() {
 window.onload = init;
 
 function init() {
-    // 用DOM获得button，点击出发事件函数
+    // 用DOM获得button，鼠标点击触发事件函数
     var fireButton = document.getElementById( "fireButton" );
     fireButton.onclick = handleFireButton;
+
+    // 如果输入位置后直接点的return建，则触发相应事件函数
+    var guessInput = document.getElementById( "guessInput" );
+    guessInput.onkeypress = handleKeyPress;
 }

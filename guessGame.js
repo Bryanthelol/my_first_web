@@ -24,15 +24,15 @@ var model = {
 
     ships: [
         {
-            locations: [ "06", "16", "26" ],
+            locations: [ 0, 0, 0 ],
             hits: [ "", "", "" ]
         },
         {
-            locations: [ "24", "34", "44" ],
+            locations: [ 0, 0, 0 ],
             hits: [ "", "", "" ]
         },
         {
-            locations: [ "10", "11", "12" ],
+            locations: [ 0, 0, 0 ],
             hits: [ "", "", "" ]
         }
 	],
@@ -82,7 +82,34 @@ var model = {
         var direction = Math.floor( Math.random() * 2 );
         var row, col;
 
-        if ( direction === 1 ) {} else {}
+        if ( direction === 1 ) {
+            row = Math.floor( Math.random() * this.boardSize );
+            col = Math.floor( Math.random() * ( this.boardSize - this.shipLength ) );
+        } else {
+            row = Math.floor( Math.random() * ( this.boardSize - this.shipLength ) );
+            col = Math.floor( Math.random() * this.boardSize );
+        }
+        var newShipLocations = [];
+        for ( var i = 0; i < this.shipLength; i++ ) {
+            if ( direction === 1 ) {
+                newShipLocations.push( row + "" + ( col + i ) );
+            } else {
+                newShipLocations.push( ( row + i ) + "" + col );
+            }
+        }
+        return newShipLocations;
+    },
+
+    collosion: function ( locations ) {
+        for ( var i = 0; i < this.numShips; i++ ) {
+            var ship = model.ships[ i ];
+            for ( var j = 0; j < locations.length; j++ ) {
+                if ( ship.locations.indexOf( locations[ j ] ) >= 0 ) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 };
 
@@ -163,4 +190,6 @@ function init() {
     // 如果输入位置后直接点的return建，则触发相应事件函数
     var guessInput = document.getElementById( "guessInput" );
     guessInput.onkeypress = handleKeyPress;
+
+    model.generateShipLocations();
 }

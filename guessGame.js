@@ -53,7 +53,7 @@ var model = {
             }
         }
         view.displayMiss( guess );
-        view.displayMessage( "遗憾，未命中……" )；
+        view.displayMessage( "遗憾，未命中……" );
         return false;
     },
 
@@ -115,7 +115,7 @@ var model = {
 
 // controller层，操控model层的数据，无论是输入model的还是从model输出的
 var controller = {
-    guesses: 0;
+    guesses: 0,
 
     processGuess: function ( guess ) {
         var location = parseGuess( guess );

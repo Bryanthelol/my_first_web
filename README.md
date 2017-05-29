@@ -4,7 +4,7 @@
 
 效果图：
 
-![](https://raw.github.com/Bryanthelol/my_first_webapp/master/img/ScreenShot .png)
+![](https://raw.github.com/Bryanthelol/my_first_webapp/master/img/ScreenShot.png)
 
 -----------------------------------
 

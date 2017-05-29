@@ -2,6 +2,10 @@
 
 简介：一个猜位置的小游戏
 
+效果图：
+
+![](https://raw.github.com/Bryanthelol/my_first_webapp/master/img/ScreenShot.png)
+
 -----------------------------------
 
 （学到第八章时）

@@ -4,7 +4,11 @@
 
 效果图：
 
-![效果图](https://raw.github.com/Bryanthelol/my_first_webapp/master/img/ScreenShot.png)
+![效果图1](https://raw.github.com/Bryanthelol/my_first_webapp/master/img/ScreenShot.png)
+
+我看的《Head First javaScript Programming》：
+
+![效果图2](https://raw.github.com/Bryanthelol/my_first_webapp/master/img/hfjs.png)
 
 -----------------------------------
 
